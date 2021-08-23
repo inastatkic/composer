@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A968187D26CFF52000DF90E1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A968187C26CFF52000DF90E1 /* Launch Screen.storyboard */; };
+		A968188226D52CCA00DF90E1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A968188126D52CCA00DF90E1 /* Data.swift */; };
+		A98B4B2C26DB946100F38BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98B4B2B26DB946100F38BAB /* Assets.xcassets */; };
+		A9C0BB3026D9015100E73187 /* simd_float4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0BB2F26D9015100E73187 /* simd_float4x4.swift */; };
 		A9CDB5D226CEE3CE00D649C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5D126CEE3CE00D649C8 /* AppDelegate.swift */; };
 		A9CDB5D426CEE3CE00D649C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5D326CEE3CE00D649C8 /* ContentView.swift */; };
 		A9CDB5D626CEE3CF00D649C8 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5D526CEE3CF00D649C8 /* Experience.rcproject */; };
-		A9CDB5D826CEE3D200D649C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CDB5D726CEE3D200D649C8 /* Assets.xcassets */; };
 		A9CDB5DB26CEE3D200D649C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CDB5DA26CEE3D200D649C8 /* Preview Assets.xcassets */; };
+		A9CDB5E426CEEB6100D649C8 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5E326CEEB6100D649C8 /* ARViewContainer.swift */; };
+		A9CDB5E726CEFCD100D649C8 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5E626CEFCD100D649C8 /* Composition.swift */; };
+		A9CDB5E926CF041E00D649C8 /* CompositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5E826CF041E00D649C8 /* CompositionView.swift */; };
+		A9CDB5EB26CF14AE00D649C8 /* CompositionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5EA26CF14AE00D649C8 /* CompositionsView.swift */; };
+		A9CDB5EE26CF188800D649C8 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5ED26CF188800D649C8 /* DocumentPicker.swift */; };
+		A9CDB5F126CFB35F00D649C8 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5F026CFB35F00D649C8 /* FileManager.swift */; };
+		A9CDB5F426CFD61600D649C8 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CDB5F326CFD61600D649C8 /* VirtualObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A968187C26CFF52000DF90E1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A968188126D52CCA00DF90E1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A98B4B2B26DB946100F38BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9C0BB2F26D9015100E73187 /* simd_float4x4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = simd_float4x4.swift; sourceTree = "<group>"; };
 		A9CDB5CE26CEE3CE00D649C8 /* PlaceComposer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceComposer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CDB5D126CEE3CE00D649C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9CDB5D326CEE3CE00D649C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9CDB5D526CEE3CF00D649C8 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
-		A9CDB5D726CEE3D200D649C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9CDB5DA26CEE3D200D649C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9CDB5DC26CEE3D200D649C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9CDB5E326CEEB6100D649C8 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		A9CDB5E626CEFCD100D649C8 /* Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
+		A9CDB5E826CF041E00D649C8 /* CompositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionView.swift; sourceTree = "<group>"; };
+		A9CDB5EA26CF14AE00D649C8 /* CompositionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionsView.swift; sourceTree = "<group>"; };
+		A9CDB5ED26CF188800D649C8 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		A9CDB5F026CFB35F00D649C8 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		A9CDB5F326CFD61600D649C8 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A968187E26D52AD300DF90E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A968188126D52CCA00DF90E1 /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A968188026D52C9D00DF90E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9CDB5E526CEFA6C00D649C8 /* Compositions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A9CDB5C526CEE3CE00D649C8 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +90,19 @@
 		A9CDB5D026CEE3CE00D649C8 /* PlaceComposer */ = {
 			isa = PBXGroup;
 			children = (
+				A9CDB5EF26CFB33200D649C8 /* Extensions */,
+				A9CDB5F226CFD4E100D649C8 /* Resource */,
+				A9CDB5EC26CF158600D649C8 /* Elements */,
+				A968187E26D52AD300DF90E1 /* Model */,
+				A9CDB5E226CEEB4300D649C8 /* AR */,
+				A968188026D52C9D00DF90E1 /* Views */,
 				A9CDB5D126CEE3CE00D649C8 /* AppDelegate.swift */,
 				A9CDB5D326CEE3CE00D649C8 /* ContentView.swift */,
 				A9CDB5D526CEE3CF00D649C8 /* Experience.rcproject */,
-				A9CDB5D726CEE3D200D649C8 /* Assets.xcassets */,
+				A98B4B2B26DB946100F38BAB /* Assets.xcassets */,
 				A9CDB5DC26CEE3D200D649C8 /* Info.plist */,
 				A9CDB5D926CEE3D200D649C8 /* Preview Content */,
+				A968187C26CFF52000DF90E1 /* Launch Screen.storyboard */,
 			);
 			path = PlaceComposer;
 			sourceTree = "<group>";
@@ -70,6 +113,49 @@
 				A9CDB5DA26CEE3D200D649C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A9CDB5E226CEEB4300D649C8 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				A9CDB5E326CEEB6100D649C8 /* ARViewContainer.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		A9CDB5E526CEFA6C00D649C8 /* Compositions */ = {
+			isa = PBXGroup;
+			children = (
+				A9CDB5E626CEFCD100D649C8 /* Composition.swift */,
+				A9CDB5E826CF041E00D649C8 /* CompositionView.swift */,
+				A9CDB5EA26CF14AE00D649C8 /* CompositionsView.swift */,
+			);
+			path = Compositions;
+			sourceTree = "<group>";
+		};
+		A9CDB5EC26CF158600D649C8 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				A9CDB5ED26CF188800D649C8 /* DocumentPicker.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		A9CDB5EF26CFB33200D649C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A9C0BB2F26D9015100E73187 /* simd_float4x4.swift */,
+				A9CDB5F026CFB35F00D649C8 /* FileManager.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9CDB5F226CFD4E100D649C8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A9CDB5F326CFD61600D649C8 /* VirtualObject.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,8 +215,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A968187D26CFF52000DF90E1 /* Launch Screen.storyboard in Resources */,
+				A98B4B2C26DB946100F38BAB /* Assets.xcassets in Resources */,
 				A9CDB5DB26CEE3D200D649C8 /* Preview Assets.xcassets in Resources */,
-				A9CDB5D826CEE3D200D649C8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +228,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C0BB3026D9015100E73187 /* simd_float4x4.swift in Sources */,
+				A9CDB5F426CFD61600D649C8 /* VirtualObject.swift in Sources */,
 				A9CDB5D426CEE3CE00D649C8 /* ContentView.swift in Sources */,
+				A9CDB5E926CF041E00D649C8 /* CompositionView.swift in Sources */,
+				A9CDB5EB26CF14AE00D649C8 /* CompositionsView.swift in Sources */,
+				A968188226D52CCA00DF90E1 /* Data.swift in Sources */,
+				A9CDB5E426CEEB6100D649C8 /* ARViewContainer.swift in Sources */,
+				A9CDB5EE26CF188800D649C8 /* DocumentPicker.swift in Sources */,
 				A9CDB5D226CEE3CE00D649C8 /* AppDelegate.swift in Sources */,
+				A9CDB5F126CFB35F00D649C8 /* FileManager.swift in Sources */,
 				A9CDB5D626CEE3CF00D649C8 /* Experience.rcproject in Sources */,
+				A9CDB5E726CEFCD100D649C8 /* Composition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlaceComposer/Preview Content\"";
 				DEVELOPMENT_TEAM = 2UNH9XNGLP;
@@ -292,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PlaceComposer/Preview Content\"";
 				DEVELOPMENT_TEAM = 2UNH9XNGLP;

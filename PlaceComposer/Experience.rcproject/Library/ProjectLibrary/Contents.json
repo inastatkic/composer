@@ -1,3 +1,12 @@
 [
-
+  {
+    "libraryIdentifier" : "9b561ebfecf607c07643bb5f7cab2a26",
+    "format" : "model",
+    "displayName" : "plasticSideChair.usdz"
+  },
+  {
+    "libraryIdentifier" : "a5231d6136ccccab1e4e7af0519ea4f1",
+    "format" : "model",
+    "displayName" : "AirForce.usdz"
+  }
 ]

@@ -1,32 +1,29 @@
 // Created by Ina Statkic in 2021.
 
 import SwiftUI
-import RealityKit
 
 struct ContentView : View {
+    @State private var showCompositions: Bool = false
+    
     var body: some View {
-        return ARViewContainer().edgesIgnoringSafeArea(.all)
+        ZStack {
+            ARViewContainer()
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                Button {
+                    showCompositions.toggle()
+                } label: {
+                    Image(systemName: "circle.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.gray)
+                        .padding()
+                }.sheet(isPresented: $showCompositions) {
+                    CompositionsView()
+                }
+            }
+        }
     }
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        
-        return arView
-        
-    }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
 }
 
 #if DEBUG
