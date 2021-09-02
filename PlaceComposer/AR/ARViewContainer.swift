@@ -2,52 +2,38 @@
 
 import SwiftUI
 import RealityKit
-import ARKit
 
 struct ARViewContainer: UIViewRepresentable {
-    @EnvironmentObject private var virtualData: VirtualData
+    @EnvironmentObject var virtualContent: VirtualContent
     
-    let arView = ARView(frame: .zero)
+    let arView = ARViewExperience(frame: .zero)
     
-    func makeUIView(context: Context) -> ARView {
-        
-        arView.environment.sceneUnderstanding.options = []
-        arView.environment.sceneUnderstanding.options.insert(
-            [.receivesLighting, .occlusion, .physics])
-        
-        // MARK: - Configuration
-                
-        arView.automaticallyConfigureSession = false
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.sceneReconstruction = .meshWithClassification
-        configuration.planeDetection.insert([.horizontal, .vertical])
-        configuration.environmentTexturing = .automatic
-        arView.session.run(configuration)
+    func makeUIView(context: Context) -> ARViewExperience {
+
+        arView.configure()
 
         // MARK: - Experience
         
         // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
+//        let boxAnchor = try! Experience.loadBox()
         
         // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+//        arView.scene.anchors.append(boxAnchor)
         
         // MARK: - Interaction
         
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap))
         arView.addGestureRecognizer(tapGesture)
         
-        // MARK: - Render
-        
-        arView.renderOptions.insert(.disableMotionBlur)
-        arView.renderOptions.remove(.disableDepthOfField)
+        let longPressGesture = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLongPress))
+        longPressGesture.allowableMovement = 100
+        arView.addGestureRecognizer(longPressGesture)
         
         return arView
-        
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {
-        virtualData.virtualObject?.loadAsync()
+    func updateUIView(_ uiView: ARViewExperience, context: Context) {
+        virtualContent.virtualObject?.loadModelAsync()
     }
     
     // MARK: - Coordinator
@@ -73,13 +59,30 @@ struct ARViewContainer: UIViewRepresentable {
                 // Intersection point of the ray with the real-world surface.
                 let resultAnchor = AnchorEntity(world: result.worldTransform.position)
                 // Place virtual object into real-world space
-                if let virtualObject = arViewContainer.virtualData.virtualObject?.entity {
+                if let virtualObject = arViewContainer.virtualContent.virtualObject?.entity {
                     place(virtualObject, at: resultAnchor, in: arViewContainer.arView)
                 }
+                
             }
         }
         
+        @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
+            let touchPoint = sender.location(in: arViewContainer.arView)
+            // Entity under touch point
+            guard let entity = arViewContainer.arView.entity(at: touchPoint) else { return }
+            if entity.anchor != nil {
+
+//                let fileManager = FileManager.default
+//                guard let documentUrl = fileManager.documentsURL?.appendingPathComponent(entity.name) else { return }
+//                let virtualObject = VirtualObject(url: documentUrl)
+//                arViewContainer.virtualData.virtualObject = virtualObject
+                // TODO: Select Virtual Object
+            }
+            
+        }
+        
         private func place(_ entity: ModelEntity, at anchor: AnchorEntity, in arView: ARView) {
+//            let entity = entity.clone(recursive: true)
             entity.generateCollisionShapes(recursive: true)
             arView.installGestures([.translation, .rotation], for: entity)
             anchor.addChild(entity)

@@ -1,8 +1,8 @@
 // Created by Ina Statkic in 2021.
 
-import SwiftUI
+import Combine
 
-final class VirtualData: ObservableObject {
+final class VirtualContent: ObservableObject {
     @Published var virtualObject: VirtualObject?
     @Published var compositions: [Composition] = []
 }

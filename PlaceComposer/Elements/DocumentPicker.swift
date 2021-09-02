@@ -1,19 +1,14 @@
 // Created by Ina Statkic in 2021.
 
 import SwiftUI
-import RealityKit
 import QuickLookThumbnailing
-import SwiftUI
 
 struct DocumentPicker: UIViewControllerRepresentable {
-    @EnvironmentObject private var virtualData: VirtualData
+    @EnvironmentObject var virtualContent: VirtualContent
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<DocumentPicker>) -> UIDocumentPickerViewController {
-        
         let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.usdz, .realityFile])
-        
         picker.delegate = context.coordinator
-    
         return picker
     }
     
@@ -52,36 +47,33 @@ struct DocumentPicker: UIViewControllerRepresentable {
             NSFileCoordinator().coordinate(readingItemAt: fileUrl, error: &error) { url in
     
                 let fileManager = FileManager.default
-                guard let documentsUrl = fileManager.documentsURL?.appendingPathComponent(url.lastPathComponent) else { return }
-                    if fileManager.fileExists(atPath: documentsUrl.path) {
-                        try? fileManager.removeItem(atPath: documentsUrl.path)
-                    }
-                    try? fileManager.copyItem(atPath: url.path, toPath: documentsUrl.path)
-                    let virtualObject = VirtualObject(url: documentsUrl)
-                    documentPicker.virtualData.virtualObject = virtualObject
+                guard let documentUrl = fileManager.documentsURL?.appendingPathComponent(url.lastPathComponent) else { return }
+//                documentUrl.pathExtension
+
+                if fileManager.fileExists(atPath: documentUrl.path) {
+                    try? fileManager.removeItem(atPath: documentUrl.path)
+                }
+                try? fileManager.copyItem(atPath: url.path, toPath: documentUrl.path)
+                let virtualObject = VirtualObject(url: documentUrl)
+                documentPicker.virtualContent.virtualObject = virtualObject
                 
                 // Generate Thumbnail Image
                 let scale = UIScreen.main.scale
-                let request = QLThumbnailGenerator.Request(fileAt: url, size: CGSize(width: 100, height: 100), scale: scale, representationTypes: .all)
+                let request = QLThumbnailGenerator.Request(fileAt: documentUrl, size: CGSize(width: 100, height: 100), scale: scale, representationTypes: .all)
                 let generator = QLThumbnailGenerator.shared
                 generator.generateBestRepresentation(for: request) { thumbnail, error in
                     DispatchQueue.main.async {
                         if let thumbnail = thumbnail {
                             let image = Image(uiImage: thumbnail.uiImage)
-                            let composition = Composition(url: documentsUrl, image: image)
-                            self.documentPicker.virtualData.compositions.append(composition)
+                            let composition = Composition(url: documentUrl, image: image)
+                            self.documentPicker.virtualContent.compositions.append(composition)
                         } else if let error = error {
                             debugPrint(error.localizedDescription)
                         }
                     }
                 }
     
- 
             }
-        }
-        
-        func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-            
         }
     }
     

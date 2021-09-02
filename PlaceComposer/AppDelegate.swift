@@ -2,6 +2,7 @@
 
 import UIKit
 import SwiftUI
+import ARKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: contentView.environmentObject(VirtualData()))
+        window.rootViewController = UIHostingController(rootView: contentView.environmentObject(VirtualContent()))
         self.window = window
         window.makeKeyAndVisible()
+        
+        guard ARWorldTrackingConfiguration.supportsSceneReconstruction(.meshWithClassification) else {
+            fatalError("""
+                Scene reconstruction requires a device with a LiDAR Scanner.
+            """)
+        }
+        
         return true
     }
 
